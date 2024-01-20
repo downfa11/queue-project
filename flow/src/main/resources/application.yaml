@@ -1,0 +1,25 @@
+
+server:
+  port=9010
+
+spring:
+  data:
+    redis:
+      host:
+      port: 6379
+      password: 1116
+
+scheduler:
+  enabled: true
+---
+spring:
+  data:
+    redis:
+      host:
+      port: 6379
+      password: 1116
+  config:
+    activate:
+      on-profile: test
+scheduler:
+  enabled: false
