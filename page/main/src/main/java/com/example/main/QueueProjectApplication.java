@@ -1,4 +1,4 @@
-package com.example.queueproject;
+package com.example.main;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -36,8 +36,9 @@ public class QueueProjectApplication {
 			var cookie = Arrays.stream(cookies).filter(i -> i.getName().equalsIgnoreCase(cookieName)).findFirst();
 			token = cookie.orElse(new Cookie(cookieName,"")).getValue();
 		}
+
 		var uri = UriComponentsBuilder
-				.fromUriString("http://127.0.0.1:9010")
+				.fromUriString("http://flow-service:8080")
 				.path("/api/v1/queue/allowed")
 				.queryParam("queue",queue)
 				.queryParam("user_id",userId)
@@ -45,8 +46,8 @@ public class QueueProjectApplication {
 				.encode().build().toUri();
 		ResponseEntity<AllowedUserResponse> response = restTemplate.getForEntity(uri,AllowedUserResponse.class);
 		if(response.getBody()==null || !response.getBody().allowed()){
-			return "redirect:http://127.0.0.1:9010/waiting-room?user_id=%d&redirect_url=%s"
-					.formatted(userId,"http://127.0.0.1:9000?user_id=%d".formatted(userId));
+			return "redirect:http://localhost:9010/waiting-room?user_id=%d&redirect_url=%s"
+					.formatted(userId,"http://localhost:9000?user_id=%d".formatted(userId));
 		}
 		return "index";
 	}

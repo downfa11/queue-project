@@ -1,0 +1,9 @@
+spring:
+  data:
+    redis:
+      host: 3.34.182.89
+      port: 6379
+      password: 1116
+
+scheduler:
+  enabled: true

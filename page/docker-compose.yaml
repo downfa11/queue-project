@@ -1,0 +1,29 @@
+version: '3'
+services:
+
+  main-service:
+    image: main:1.0.0
+    networks:
+      - queue_network
+    ports:
+      - "9000:8080"
+
+  flow-service:
+    image: flow:1.0.0
+    networks:
+      - queue_network
+    ports:
+      - "9010:8080"
+    environment:
+      - SPRING_REDIS_HOST=ec2-3-34-182-89.ap-northeast-2.compute.amazonaws.com
+      - SPRING_REDIS_PORT=6379
+      - SPRING_REDIS_PASSWORD=1116
+      - SCHEDULER_ENABLED=true
+      - SPRING_REDIS_CONFIG_ACTIVATE_ON_PROFILE=test
+      - SCHEDULER_ENABLED_TEST=false
+
+
+
+networks:
+  queue_network:
+    driver: bridge

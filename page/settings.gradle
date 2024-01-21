@@ -6,3 +6,10 @@ pluginManagement {
 	}
 }
 rootProject.name = 'queue-project'
+include 'flow'
+include 'main'
+include 'main'
+include 'main'
+include 'flow'
+include 'main'
+
