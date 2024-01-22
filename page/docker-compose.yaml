@@ -15,7 +15,7 @@ services:
     ports:
       - "9010:8080"
     environment:
-      - SPRING_REDIS_HOST=ec2-3-34-182-89.ap-northeast-2.compute.amazonaws.com
+      - SPRING_REDIS_HOST=
       - SPRING_REDIS_PORT=6379
       - SPRING_REDIS_PASSWORD=1116
       - SCHEDULER_ENABLED=true

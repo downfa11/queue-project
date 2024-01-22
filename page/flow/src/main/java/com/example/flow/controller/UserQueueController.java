@@ -6,6 +6,7 @@ import com.example.flow.dto.RankNumberResponse;
 import com.example.flow.dto.RegisterUserResponse;
 import com.example.flow.service.UserQueueService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseCookie;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ServerWebExchange;
@@ -14,6 +15,7 @@ import reactor.core.publisher.Mono;
 import java.time.Duration;
 
 @RestController
+@Slf4j
 @RequestMapping("/api/v1/queue")
 @RequiredArgsConstructor
 public class UserQueueController {
@@ -52,6 +54,7 @@ public class UserQueueController {
     Mono<?> touch(@RequestParam(name="queue",defaultValue = "default") String queue,
                   @RequestParam(name="user_id") Long userId,
                   ServerWebExchange exchange) {
+        System.out.println("set cookies method 'touch'.");
         return Mono.defer(() -> service.generateToken(queue, userId))
                 .map(token -> {
                     exchange.getResponse().addCookie(
@@ -61,6 +64,8 @@ public class UserQueueController {
                                     .path("/")
                                     .build()
                     );
+
+                    log.info("Generated and set cookies. Token: {}",token);
                     return token;
                 });
     }

@@ -55,6 +55,7 @@ public class UserQueueService {
 
     public Mono<Boolean> isAllowedByToken(final String queue,final Long userId,final String token){
         return this.generateToken(queue,userId)
+                .doOnSuccess(gen -> log.info("isAllowedByToken {} eqeuals {} token",gen,token))
                 .filter(gen -> gen.equalsIgnoreCase(token))
                 .map(i -> true)
                 .defaultIfEmpty(false);
@@ -63,7 +64,8 @@ public class UserQueueService {
     public Mono<Long> getRank(final String queue, final Long userId) {
         return reactiveRedisTemplate.opsForZSet().rank(WAIT_KEY.formatted(queue), userId.toString())
                 .defaultIfEmpty(-1L)
-                .map(rank -> rank >= 0 ? rank + 1 : rank);
+                .map(rank -> rank >= 0 ? rank + 1 : rank)
+                .doOnSuccess(rank-> log.info("getRank : {}",rank));
     }
 
 
@@ -88,14 +90,14 @@ public class UserQueueService {
     }
 
 
-    @Scheduled(initialDelay = 5000, fixedDelay = 3000)
+    @Scheduled(initialDelay = 5000, fixedDelay = 10000)
     public void scheduleAllowUser(){
 
         if(!scheduling){
              log.info("passed scheduling..");
              return;
         }
-        var maxAllowUserCount =100L;
+        var maxAllowUserCount =1L;
         // log.info("called scheduling..");
 
         reactiveRedisTemplate.scan(ScanOptions.scanOptions()

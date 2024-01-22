@@ -1,4 +1,4 @@
 package com.example.flow.dto;
 
-public record RankNumberResponse(Long rankNumber) {
+public record RankNumberResponse(Long rank) {
 }

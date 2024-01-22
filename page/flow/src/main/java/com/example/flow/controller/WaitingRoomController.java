@@ -28,6 +28,7 @@ public class WaitingRoomController {
         var token = (cookieValue==null) ? "" : cookieValue.getValue();
 
         return service.isAllowedByToken(queue,userId,token)
+                .doOnSuccess(allowed -> log.info("WaitingRoomPage isAllowedByToken allowed : "+allowed))
                 .filter(allowed -> allowed)
                 .flatMap(allowed -> Mono.just(Rendering.redirectTo(redirectUrl).build()))
                 .switchIfEmpty(
