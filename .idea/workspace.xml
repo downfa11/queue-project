@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fa8dbac-fa82-4484-b60b-9258045820a1" name="Changes" comment="" />
+    <list default="true" id="9fa8dbac-fa82-4484-b60b-9258045820a1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/flow/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/main/java/com/example/flow/FlowApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/main/java/com/example/flow/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/main/java/com/example/flow/controller/UserQueueContoller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/main/java/com/example/flow/controller/WaitingRoomController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/main/java/com/example/flow/dto/AllowUserResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/main/java/com/example/flow/dto/AllowedUserResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/main/java/com/example/flow/dto/RankNumberResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/main/java/com/example/flow/dto/RegisterUserResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/main/java/com/example/flow/exception/ApplicationAdvice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/main/java/com/example/flow/exception/ApplicationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/main/java/com/example/flow/exception/ErrorCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/main/java/com/example/flow/service/UserQueueService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/main/resources/templates/waiting-room.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/test/java/com/example/flow/EmbeddedRedis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/test/java/com/example/flow/FlowApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow/src/test/java/com/example/flow/controller/UserQueueContollerTest.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +68,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "8075b4424bcb9978de8f7368ec46ce96",
+    "spring.configuration.checksum": "a211fd0f7d723534b15eb8f42a5ef51c",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -66,6 +91,7 @@
       <updated>1705778246540</updated>
       <workItem from="1705778247626" duration="1021000" />
       <workItem from="1705829817190" duration="68000" />
+      <workItem from="1705916738950" duration="5000" />
     </task>
     <servers />
   </component>
